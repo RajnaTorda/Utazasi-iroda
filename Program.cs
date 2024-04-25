@@ -30,16 +30,16 @@ class Program
 
     static void Main(string[] args)
     {
-        // Adatok betöltése a fájlokból
+        
         LoadData();
 
-        // Feliratkozás a program bezárásának eseményére
+        
         AppDomain.CurrentDomain.ProcessExit += new EventHandler(OnProcessExit);
 
         MainMenu();
     }
 
-    // Adatok betöltése a fájlokból
+    
     static void LoadData()
     {
         if (File.Exists("utasok.txt"))
@@ -74,7 +74,7 @@ class Program
         }
     }
 
-    // Adatok mentése a fájlokba
+    
     static void SaveData()
     {
         using (StreamWriter sw = new StreamWriter("utasok.txt"))
@@ -314,7 +314,7 @@ class Program
         Console.Clear();
     }
 
-    // A program bezárása előtt mentés
+    
     static void OnProcessExit(object sender, EventArgs e)
     {
         SaveData();
